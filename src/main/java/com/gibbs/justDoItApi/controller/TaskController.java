@@ -32,4 +32,9 @@ public class TaskController {
     public Optional<Task> getTask(@PathVariable("taskId") int taskId){
         return taskService.getTask(taskId);
     }
+
+    @GetMapping(value = "task/priority/{priority}")
+    public List<Task> getTaskByPriority(@PathVariable("priority") String priority){
+        return taskService.getTaskByPriority(priority);
+    }
 }

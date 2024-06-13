@@ -24,4 +24,8 @@ public class TaskService {
     public Optional<Task> getTask(int taskId){
         return taskRepo.findById(taskId);
     }
+
+    public List<Task> getTaskByPriority(String priority){
+        return taskRepo.findByPriorityContainingIgnoreCase(priority);
+    }
 }

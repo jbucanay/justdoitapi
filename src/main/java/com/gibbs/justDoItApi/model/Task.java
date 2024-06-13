@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Task {
     @Id
-    private int task_id;
+    private int taskId;
     private Timestamp completed_at;
     private Timestamp delete_at;
     private String category;
@@ -20,8 +20,8 @@ public class Task {
     private String description;
     private String title;
 
-    public int getTask_id() {
-        return task_id;
+    public int getTaskId() {
+        return taskId;
     }
 
     public Timestamp getCompleted_at() {
@@ -55,7 +55,7 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" +
-                "task_id=" + task_id +
+                "taskId=" + taskId +
                 ", completed_at=" + completed_at +
                 ", delete_at=" + delete_at +
                 ", category='" + category + '\'' +
