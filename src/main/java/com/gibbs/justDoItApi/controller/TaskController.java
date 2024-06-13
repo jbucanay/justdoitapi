@@ -3,9 +3,7 @@ package com.gibbs.justDoItApi.controller;
 import com.gibbs.justDoItApi.model.Task;
 import com.gibbs.justDoItApi.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,5 +39,10 @@ public class TaskController {
     @GetMapping(path = "task/idAndPriority/{taskId}/{priority}")
     public Task getTaskByIdAndPriority(@PathVariable("taskId") int taskId, @PathVariable String priority){
         return taskService.getTaskByIdAndPriority(taskId, priority);
+    }
+
+    @PostMapping(path = "addTask")
+    public Optional<Task> addTask(@RequestBody Task task){
+        return taskService.addTask(task);
     }
 }

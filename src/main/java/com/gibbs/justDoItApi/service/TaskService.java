@@ -13,10 +13,6 @@ public class TaskService {
     @Autowired
     private TaskRepo taskRepo;
 
-    public void addTask(Task task){
-        taskRepo.save(task);
-    }
-
     public List<Task> getAllTasks(){
         return taskRepo.findAll();
     }
@@ -31,5 +27,14 @@ public class TaskService {
 
     public Task getTaskByIdAndPriority(int taskId, String priority){
         return taskRepo.findByTaskIdAndPriorityContainsIgnoreCase(taskId,priority);
+    }
+
+    public Optional<Task> addTask(Task task){
+        Task saved = taskRepo.save(task);
+        return this.getTask(saved.getTaskId());
+    }
+
+    public Optional<Task> updateTask(Task task){
+        return null;
     }
 }

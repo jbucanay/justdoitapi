@@ -1,6 +1,8 @@
 package com.gibbs.justDoItApi.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +13,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Task {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int taskId;
     private Timestamp completed_at;
     private Timestamp delete_at;
