@@ -37,4 +37,9 @@ public class TaskController {
     public List<Task> getTaskByPriority(@PathVariable("priority") String priority){
         return taskService.getTaskByPriority(priority);
     }
+
+    @GetMapping(path = "task/idAndPriority/{taskId}/{priority}")
+    public Task getTaskByIdAndPriority(@PathVariable("taskId") int taskId, @PathVariable String priority){
+        return taskService.getTaskByIdAndPriority(taskId, priority);
+    }
 }

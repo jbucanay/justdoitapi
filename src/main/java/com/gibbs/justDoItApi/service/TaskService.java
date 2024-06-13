@@ -28,4 +28,8 @@ public class TaskService {
     public List<Task> getTaskByPriority(String priority){
         return taskRepo.findByPriorityContainingIgnoreCase(priority);
     }
+
+    public Task getTaskByIdAndPriority(int taskId, String priority){
+        return taskRepo.findByTaskIdAndPriorityContainsIgnoreCase(taskId,priority);
+    }
 }
