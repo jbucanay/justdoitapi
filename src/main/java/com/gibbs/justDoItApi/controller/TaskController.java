@@ -3,11 +3,12 @@ package com.gibbs.justDoItApi.controller;
 import com.gibbs.justDoItApi.model.Task;
 import com.gibbs.justDoItApi.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
@@ -25,5 +26,10 @@ public class TaskController {
     @GetMapping(path = "tasks", produces = {"application/json"})
     public List<Task> getAllTasksJson(){
         return taskService.getAllTasks();
+    }
+
+    @GetMapping("task/{taskId}")
+    public Optional<Task> getTask(@PathVariable("taskId") int taskId){
+        return taskService.getTask(taskId);
     }
 }

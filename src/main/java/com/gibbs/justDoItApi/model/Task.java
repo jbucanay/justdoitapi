@@ -52,17 +52,17 @@ public class Task {
         return title;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Task{" +
-//                "task_id=" + task_id +
-//                ", completed_at=" + completed_at +
-//                ", delete_at=" + delete_at +
-//                ", category='" + category + '\'' +
-//                ", deadline=" + deadline +
-//                ", priority='" + priority + '\'' +
-//                ", description='" + description + '\'' +
-//                ", title='" + title + '\'' +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Task{" +
+                "task_id=" + task_id +
+                ", completed_at=" + completed_at +
+                ", delete_at=" + delete_at +
+                ", category='" + category + '\'' +
+                ", deadline=" + deadline +
+                ", priority='" + priority + '\'' +
+                ", description='" + description + '\'' +
+                ", title='" + title + '\'' +
+                '}';
+    }
 }
