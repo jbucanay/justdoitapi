@@ -15,8 +15,15 @@ public class TaskController {
     @Autowired
     private TaskService taskService;
 
-    @GetMapping(path = "tasks", produces = {"application/xml"})
+    //crud operations
+    @GetMapping(path = "tasksxml", produces = {"application/xml"})
     public List<Task> getAllTasks(){
+        return taskService.getAllTasks();
+    }
+
+    //adding application json is redundant, just using it for practice
+    @GetMapping(path = "tasks", produces = {"application/json"})
+    public List<Task> getAllTasksJson(){
         return taskService.getAllTasks();
     }
 }
